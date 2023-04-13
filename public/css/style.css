@@ -1,0 +1,340 @@
+.include{
+  text-align: center;
+  float: center;
+}
+.fonts{
+  font-size: 30px;
+}
+.nav{
+  position: sticky;
+  bottom: 1rem;
+}
+/* table */
+#customers {
+    margin: 120px 70px 20px 208px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 20%;
+    background-color: white;
+  }
+  
+  #customers td, #customers th {
+    border: 1px solid #11c62f;
+    padding: 20px;
+  }
+  
+ 
+  
+  #customers tr:hover {background-color: #ddd;}
+  
+  #customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #200688;
+    color: white;
+  }
+/* success  star */
+#appointment {
+  margin: 120px 70px 20px 23px 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+}
+
+#appointment td, #appointment th {
+  border: 1px solid white;
+  padding: 20px;
+}
+
+#appointment tr:nth-child(even){background-color: #11c62f;}
+
+#appointment tr:hover {background-color: rgb(221, 221, 221);}
+
+#appointment th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #200688;
+  color: rgb(29, 174, 166);
+}
+.btn-bk {
+  margin-left: 45px;
+  -webkit-border-radius: 28;
+  -moz-border-radius: 28;
+  border-radius: 28px;
+  font-family: Georgia;
+  color: #a318a3;
+  font-size: 20px;
+  padding: 8px;
+  background: #1554ac;
+  text-decoration: none;
+}
+
+.btn-bk:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+/* end */
+/* form */
+
+
+.table-body{
+  display: flex;
+  align-items: center;
+  padding-top: 1200px;
+  padding-bottom: 40px;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.top{
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.middle{
+    border-radius: 0;
+    margin-bottom: -1px;
+
+}
+
+.bottom {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.bd-placeholder-img {
+  font-size: 1.125rem;
+  text-anchor: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+/* form endend */
+
+
+
+.content-header{
+    margin-left: 160px;
+}
+.content-wrapper{
+    margin-left: 160px;
+
+}
+
+
+
+
+
+#footer-fixed{
+    text-align: center;
+    
+    margin:  4% 22%;
+}
+
+.social-icon{
+    margin: 20px 10px 5px 20px;
+}
+.copyright{
+    padding-bottom: 4px;
+    font-weight: bold;
+    
+    color: brown;
+}
+/* timming for doctor */
+.totimming{
+    margin-right: 120px; margin-top:-14px; margin-left: 337x; padding-left: 0px; left: 150px;
+}
+
+.from-timming{
+    margin-right: 72px;margin-top:-15px;margin-left: -27px;
+}
+.input-time{
+    margin-right: 19px; margin-left: 38px;
+}
+.input-to{
+    margin-left: 15px;
+}
+
+/* *
+ *
+ *   BDTASK - Responsive Admin Theme
+ *   version 1.0 */
+ *
+*/
+/*Core: General Layout Style
+==============================================================================*/
+
+
+/* H1 - H6 font */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+p {
+    margin: 0 0 10px;
+}
+
+
+/* General Links */
+
+a.article{
+  color: black;
+
+}
+a.article:hover{
+  color: white;
+}
+
+
+
+hr {
+    border-top: 1px solid #e1e6ef;
+}
+
+
+
+.main-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 60px;
+    min-height: 100%;
+    width: 150px;
+    /* z-index: 810; */
+    font-family: 'Alegreya Sans', sans-serif;
+    
+    transition: width 0.3s ease-in-out;
+    background-color: #0a5b5a;
+}
+.main-sidebar a {
+  color: white;
+}
+.sidebarGo{
+    transform: translate(-264px,108px);
+    position: absolute;   
+}
+.hamburger{
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    left: 10px;
+  
+}
+.cross{
+    margin-left: 96px;
+}
+.hoslogo{
+  background-color: #60a12a;
+  filter: grayscale(100%);
+  border-radius: 100%;
+}
+.hide{
+  visibility: hidden;
+}
+.show{
+  visibility: visible;
+}
+listing{border-top:1px solid #d9d9d9; padding:15px 18px;}
+.post .listing:first-child{border:none;margin:0;}
+.listing h3, .listing p{margin:0;padding:0;}
+.listing h3{font-size:15px; font-weight:bold; padding-bottom:10px;}
+.listing p{padding-bottom:2px;}
+.listing p i{padding-right:8px;font-size:15px;}
+.prelist {background:url(../images/premium.png) no-repeat top right #ffffdf;}
+.size{
+ 
+    height:500px;
+}
+
+p.text1{
+  color:white;
+  
+}
+p.pic{
+
+  text-align: left;
+  margin-bottom: 100px;
+  
+}
+div.container-fluid{
+  background-color: #0a5b5a;
+}
+
+a{
+  color: black;
+}
+.logo-image{
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: -6px;
+}
+#testmorial{
+  
+}
+
+.flex-container {
+  display: flex;
+ 
+}
+
+.flex-container > div  {
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+.box-row li a {
+  left: 1400px;
+}
+@media  (max-width: 600px) {
+  #testmorial{
+    height: 146.25%;
+  width: 94%;
+  margin-left: 2%;
+  margin-right: 1.5%;
+  }
+  .box-row{
+  margin-left: 233px;
+  }
+
+}
+.include{
+  text-align: center;
+  float: center;
+}
+

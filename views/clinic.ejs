@@ -1,0 +1,21 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar2') %>
+<%- include('partials/sidebar') %>
+
+    <% if (dets.length !=0) { %>
+        <div style="margin-left: 150px;margin-left: 600px;margin-top: 10px;">
+            <h1>List the Clinic</h1>
+       </div>
+        <%- include('table/reacherTable') %>
+        <% }  else { %>
+            <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+              <h1>No Record Found</h1>
+          
+          </div>  
+             <% } %>  
+
+
+
+
+
+<%- include('partials/footer') %>

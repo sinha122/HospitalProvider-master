@@ -1,0 +1,57 @@
+<%- include('partials/header') %>
+
+     <!-- Makes POST request to /register route -->
+<main class="form-signin ">
+  <form action="/register" method="post">    
+    <h1 class="h3 mb-3 mb-4 fw-normal">Register </h1>   
+
+    <div class="form-floating">
+      <input type="text" name="fname" class="form-control bottom" id="floatingInput1" placeholder="Patient First name:" required autofocus>
+      <label for="floatingInput1">Patient First name:</label>
+    </div>
+    <div class="form-floating">
+      <input type="text" name="lname" class="form-control bottom" id="floatingInput1" placeholder="Patient Last name:" required autofocus>
+      <label for="floatingInput1">Patient Last name:</label>
+    </div>
+
+    <div class="form-floating">
+      <input type="email" name="username" class="form-control bottom" id="floatingInput1" placeholder="Patient Email:" required autofocus>
+      <label for="floatingInput1">Email:</label>
+    </div>
+    <div class="form-floating">
+      <input type="password" id="password" class="form-control bottom" placeholder="Patient password:" name="password">
+      <label for="password">Password:</label>
+    </div>
+    <div>
+      
+
+      <input type="checkbox" class="" name="members"  id="togglee" onClick="memDeleteButton()"checked ><p>By creating an account you agree to our <a href="#" style="color: black">Terms & Privacy</a>.</p>
+      <button class="w-100 btn btn-lg btn-primary show "   id="memDeleteSelected">Register </button>
+      
+    </div>    
+    <div class="container signin">
+      <p><b>Already have an account? <a href="/login" style="color: black;">Login</a></p></a></b>.</p>
+    </div>
+
+
+  
+  </form>
+</main>
+          
+        
+        
+
+
+    <!-- <div class="col-sm-4">
+      <div class="card social-block">
+        <div class="card-body">
+          <a class="btn btn-block" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+            Sign Up with Google
+          </a>
+        </div>
+      </div>
+    </div> -->
+
+  
+    <%- include('partials/footer') %>

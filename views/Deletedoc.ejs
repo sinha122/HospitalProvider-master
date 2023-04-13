@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar2') %>
+<%- include('partials/sidebar') %>
+<div class="" >
+<div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+   
+
+</div>
+
+ 
+    <!--  -->
+      <!-- dots.forEach(function(dots)){ -->
+      <% if (dots.length !=0) { %>
+        <table id="customers" style="margin-left: 441px;margin-top: 80px;">
+          <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+              <h1>Delete  the doctor</h1>
+          </div>
+          <tr>
+            <th>Doctor Full name</th><th>Speclization</th><th>Year of Experience</th><th>Doctor Number</th><th>Doctor Area </th><th>Delete</th>
+          </tr>
+        <% for (var i = 0; i < dots.length;   i++) { %>  
+          <form  action="/Docdelete" method="post">
+      
+         
+       <!-- <td><input type="checkbox" name="checkbox" value="<dots[i]._id%>" onChange="this.form.submit()"></td> -->
+         
+       <!-- <td><input type="checkbox" name="checkbox" value="<dots[i]._id%>" onChange="this.form.submit()"></td> -->
+        <td><%= dots[i].doctorName%></td>
+        <td><%= dots[i].doctorSpecilization%></td>   
+        <td><%= dots[i].YearofExperience%></td>
+        
+       <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+       <td><%= dots[i].doctorArea%></td>
+       <td><input type="checkbox" name="checkbox" onchange="this.form.submit()"></td>
+       </form>
+        
+      </tr>
+       <% } %>
+       
+      <% }  else { %>
+        <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+          <h1>No Record Found</h1>
+      
+      </div>  
+         <% } %> 
+      
+     
+ </table>
+ <div style="margin-left: 176px;margin-top: 55px;">
+   <!-- <button class="delete-button btn-bk" onclick= dots._id %>)">Deleteing</button> -->
+</div>
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

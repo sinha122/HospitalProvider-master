@@ -1,0 +1,19 @@
+<table id="customers" style="margin-left: 441px;margin-top: 80px;">
+    <tr>
+       <th>Patient Name</th><th>Patient Age</th><th>Patient Sex</th><th>Patient BloodGroup</th><th>Patient Area</th><th>Patient Disease</th><th>Patient Number</th>
+    </tr>
+ 
+    <% for (var i = 0; i < pats.length;  i++) { %>
+     <tr>
+        
+       <td><%= pats[i].patientName%></td>
+       <td><%= pats[i].patientAge%></td>
+       <td><%= pats[i].patientSex%></td>
+       <td><%= pats[i].patientBldgp%></td>
+       <td><%= pats[i].patientArea%></td>
+       <td><%= pats[i].patientDisease%></td>
+      <td><a href="tel:+91<%= pats[i].patientNumber%>"><%= pats[i].patientNumber%></a></td>
+       
+     </tr>    
+    <% } %>
+ </table>

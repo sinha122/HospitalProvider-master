@@ -1,0 +1,17 @@
+<table id="customers" style="margin-left: 441px;margin-top: 80px;">
+    <tr>
+       <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>
+    </tr>
+     <% console.log(dets); %> 
+    <% for (var i = 0; i < dets.length;  i++) { %>
+       <tr>
+          <td><%= dets[i].deparmentName%></td>
+          <td><%= dets[i].deparmentHead%></td>   
+          <td><%= dets[i].departmentArea%></td>
+          <td><%= dets[i].deparmentEmployment%></td>
+          <td><%= dets[i].deparmentPhoneNo%></td>
+ 
+        </tr>    
+       <% } %>
+ 
+ </table>

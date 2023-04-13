@@ -1,0 +1,382 @@
+<%- include('partials/header') %>
+<nav class="patientNav">
+  <div class="container-fluid" style="height: 75px;">
+       <a class="navbar-brand" href="/"><h1 style="font-size: 30px;"><b><img src = "images/logo.png" width = "150px"alt="."></b></h1></a>
+  </div>
+  <form action="/state" method="post" style="margin-top: 20px">       
+    <div class="form-floating" style="width: 150px;left: 12px;">
+      
+              <select name="state" id="state" class="form-control bottom d-flex" >
+                <option>State / UT *</option>
+                                            <option value="Andaman">Andaman &amp; Nicobar Islands</option>
+                                            <option value="Andhra_Pradesh">Andhra Pradesh</option>
+                                            <option value="Arunachal_Pradesh">Arunachal Pradesh</option>
+                                            <option value="Assam">Assam</option>
+                                            <option value="Bihar">Bihar</option>
+                                            <option value="Chandigarh">Chandigarh</option>
+                                            <option value="Chattisgarh">Chattisgarh</option>
+                                            <option value="Dadra_Nagar_Haveli">Dadra &amp; Nagar Haveli</option>
+                                            <option value="Daman_Diu">Daman &amp; Diu</option>
+                                            <option value="Goa">Goa</option>
+                                            <option value="Gujarat">Gujarat</option>
+                                            <option value="Haryana">Haryana</option>
+                                            <option value="Himachal_Pradesh">Himachal Pradesh</option>
+                                            <option value="Jammu_Kashmir">Jammu and Kashmir</option>
+                                            <option value="Jharkhand">Jharkhand</option>
+                                            <option value="Karnataka">Karnataka</option>
+                                            <option value="Kerala">Kerala</option>
+                                            <option value="Ladakh">Ladakh</option>
+                                            <option value="Lakshadweep">Lakshadweep</option>
+                                            <option value="Madhya_Pradesh">Madhya Pradesh</option>
+                                            <option value="Maharashtra">Maharashtra</option>
+                                            <option value="Manipur">Manipur</option>
+                                            <option value="Meghalaya">Meghalaya</option>
+                                            <option value="Mizoram">Mizoram</option>
+                                            <option value="Nagaland">Nagaland</option>
+                                            <option value="NCR">NCT OF Delhi</option>
+                                            <option value="Odisha">Odisha</option>
+                                            <option value="Puducherry">Puducherry</option>
+                                            <option value="Punjab">Punjab</option>
+                                            <option value="Rajasthan">Rajasthan</option>
+                                            <option value="Sikkim">Sikkim</option>
+                                            <option value="Tamil_Nadu">Tamil Nadu</option>
+                                            <option value="Telangana">Telangana</option>
+                                            <option value="Tripura">Tripura</option>
+                                            <option value="Uttar_Pradesh">Uttar Pradesh</option>
+                                            <option value="Uttarakhand">Uttarakhand</option>
+                                            <option value="West_Bengal">West Bengal</option>
+          `          </select>
+      
+  
+  <button class="w-10 btn btn-lg btn-primary"  type="submit">Submit </button>
+</div>
+  </form>
+</nav>
+
+<ul class="nav justify-content-center" >
+  <li class="nav-item">
+    <h1>Welcome <%=pats[pats.length-1].patientName %> </h1>
+    <h6> Thank You for registering </h6>
+ </li>
+</ul>
+
+<div class="card" style="width: 18rem; left: 150px">
+  <div class="card-body">
+    <strong><u>
+        <h5 class="card-title">Patient Profile</h5>
+      </u></strong>
+    <h6 class="card-subtitle mb-2 text-muted">Name         : <%=pats[pats.length-1].patientName %> </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Sex          : <%=pats[pats.length-1].patientSex %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Blood Group  : <%=pats[pats.length-1].patientBldgp %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Area         : <%=pats[pats.length-1].patientArea %></h6>
+    
+  </div>
+</div>
+
+
+ 
+<!-- table of doctor stared here -->
+<% if (dots.length !=0) { %>
+  
+  <% for (var i = 0; i < dots.length;   i++) { %>
+      <% for (var i = 0; i < dots.length;  i++) { %>
+        <% if ( pats[pats.length-1].patientArea === dots[i].doctorArea) { %>
+          <table id="customers" style="margin-left: 441px;margin-top: 40px;">
+            <tr>
+              <th>Doctor Full name</th>
+              <th>Speclization</th>
+              <th>Year of Experience</th>
+              <th>Doctor phone no</th>
+              <th>Doctor Area </th>
+            </tr>     
+            <tr> 
+                <td><%= dots[i].doctorName%></td>
+                <td><%= dots[i].doctorSpecilization%></td>   
+                <td><%= dots[i].YearofExperience%></td>
+                <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+                <td><%= dots[i].doctorArea%></td>
+            </tr>         
+        </table>
+        <% } %>
+      <% } %>
+  <% } %>
+  <% }  else { %>
+    <div style="margin-left: 210px;">
+    <h1>No Record Found</h1>
+  
+  </div>  
+     <% } %> 
+ <!-- table of doctor Endersd here -->    
+        
+<!-- table of clinic stared here -->
+<% if (dets.length !=0) { %>
+  <% for (var i = 0; i < dets.length;   i++) { %>
+      
+    <% if ( dets[i].departmentAre === pats[pats.length-1].patientArea) { %>  
+              <table id="customers" style="width:25%;margin-top: 20px;">
+                  <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>             
+                  <tr>
+                    <td><%= dets[i].deparmentName%></td>
+                    <td><%= dets[i].deparmentHead%></td>   
+                    <td><%= dets[i].departmentArea%></td>
+                    <td><%= dets[i].deparmentEmployment%></td>
+                    <td><%= dets[i].deparmentPhoneNo%></td>
+          
+                  </tr>
+                      <% } %>
+          </table>
+<% } %> <%  } else { %>
+        <div style="margin-left: 210px;">
+          <h1>No Record Found</h1>
+        
+        </div>
+        <% } %> 
+<!-- table of clinic stared here -->
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Doctor Card -->
+
+
+<div style="margin-left: 176px;margin-top: 55px;">
+ <!-- <button class="delete-button btn-bk" onclick= dots._id %>)">Deleteing</button> -->
+</div>
+
+<div style="margin-top: 15px;">
+  <a href="#exampleModal" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The
+      all Doctor which are Available in your City</button></a>
+  <a href="#Clinic" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The all Clinic
+      which are Available in your City</button></a>
+  <a href="#exampleModal3" style="top:25px;" data-bs-toggle="modal"><button class="btn-bk" type="button">List The all Clinic
+    which are Available in your City</button></a>    
+
+</div>
+
+
+
+
+<!-- Department Card -->
+
+      
+  
+      
+
+
+<!-- <console.log(pats) %> -->
+
+
+
+
+
+
+
+
+
+<!-- Modal1 Star here -->
+<div class="modal fade" id="bookappointment" aria-hidden="true" aria-labelledby="bookappointment" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <ul>
+          <!-- <h5>Your Appointment is Books</h5> -->
+        </ul>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal1 End here -->
+
+
+<!-- modal 2 stared here -->
+<div class="modal fade" id="exampleModal" aria-hidden="true" aria-labelledby="exampleModalLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="width: 772px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List of Doctor which are registesed with us</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+
+        <table id="appointment" style="width:25%;margin-top: 18px;">
+          <div class="">
+
+          </div>
+          <tr>
+            <th>Doctor Full name</th>
+            <th>Speclization</th>
+            <th>Year of Experience</th>
+            <th>Doctor phone no</th>
+            <th>Doctor Area </th>
+            <!-- <th> Book Appointment</th> -->
+          </tr>
+          <tr>
+
+            
+
+          <% for (var i = 0; i < dots.length;   i++) { %>  
+            
+        
+        
+              <tr>
+          <!-- <td><input type="checkbox" name="checkbox" value="<dots[i]._id%>" onChange="this.form.submit()"></td> -->
+                <td><%= dots[i].doctorName%></td>
+                <td><%= dots[i].doctorSpecilization%></td>   
+                <td><%= dots[i].YearofExperience%></td>
+                
+                <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+                <td><%= dots[i].doctorArea%></td>
+                
+            </tr>
+            <% } %>
+    
+  </table>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Clinic  modal Stared here-->
+<div class="modal fade" id="Clinic" aria-hidden="true" aria-labelledby="exampleModalLabel" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="width: 772px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List of Clinic which are registesed with us</h5>
+        
+      </div>
+      <div class="modal-body">
+        <% if (dets.length !=0) { %>
+         
+        <!-- table  -->
+        <table id="appointment" style="width:25%;margin-top: 18px;">
+          <div class="">
+
+          </div>
+          <tr>
+            <th>Name of Department</th>
+            <th>Department Head</th>
+            <th>Department Area</th>
+            <th>No of Employment</th>
+            <th>Department Phoneno</th>
+          </tr>
+          
+          <% for (var i = 0; i < dets.length;   i++) { %>
+
+                <% if (dets[i].departmentArea === pats[pats.length-1].patientArea) { %>
+
+
+                  <table id="customers" style="margin-left: 441px;margin-top: 80px;">
+                    <tr>
+                      <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>
+                    </tr>
+                  <% console.log(pats[pats.length-1].patientArea);%> 
+                  <% console.log(dets[i].departmentArea);%> 
+                    <% for (var i = 0; i < dets.length;  i++) { %>
+                      <tr>
+                          <td><%= dets[i].deparmentName%></td>
+                          <td><%= dets[i].deparmentHead%></td>   
+                          <td><%= dets[i].departmentArea%></td>
+                          <td><%= dets[i].deparmentEmployment%></td>
+                          <td><%= dets[i].deparmentPhoneNo%></td>
+                
+                        </tr>    
+                      <% } %>
+                
+                </table>
+
+              <% } %>
+          <% } %>
+          <% }  else { %>
+            <div >
+                 <h1>No Record Found</h1>
+          
+          </div>  
+             <% } %>  
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- modal 3 -->
+<!-- modal 3 stared here -->
+<div class="modal fade" id="exampleModal3" aria-hidden="true" aria-labelledby="exampleModalLabel"
+  tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="width: 772px;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">List of Doctor in </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+
+      <div class="modal-body">
+        <% if (dots.length !=0) { %>
+  
+              <% for (var i = 0; i < dots.length;   i++) { %>
+            
+                <% for (var i = 0; i < dots.length;  i++) { %>
+                    <% if ( state[state.length-1] === dots[i].doctorArea) { %>
+                      <% console.log(state[state.length-1]); %> 
+                      <% console.log(dots[i]); %> 
+            
+            
+                      <table id="appointment" style="width:25%;margin-top: 18px;">
+                        <tr>
+                          <th>Doctor Full name</th>
+                          <th>Speclization</th>
+                          <th>Year of Experience</th>
+                          <th>Doctor phone no</th>
+                          <th>Doctor Area </th>
+                        </tr>
+                              
+                          <tr> 
+                            <td><%= dots[i].doctorName%></td>
+                            <td><%= dots[i].doctorSpecilization%></td>   
+                            <td><%= dots[i].YearofExperience%></td>
+                            <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+                            <td><%= dots[i].doctorArea%></td>
+                        </tr>   
+                          <% } %>
+                    
+                    </table>
+            
+                  <% } %>
+              <% } %>
+              <% }  else { %>
+                <div style="margin-left: 210px;">
+                <h1>No Record Found</h1>
+              
+              </div>  
+                 <% } %>
+    
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

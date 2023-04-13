@@ -1,0 +1,34 @@
+<%- include('partials/header') %>
+
+
+
+ <!-- Makes POST request to /login route -->
+ <main class="form-signin ">
+  <form action="/login" method="POST">
+    <h1 class="h3 mb-3 mb-4 fw-normal"><small><strong>Please Log In:-</strong></small></h1>
+
+    <div class="form-floating">  
+      <input type="email" class="form-control  bottom" id="floatingemail1" name="username"required autofocus>          
+      <label for="floatingemail1">Email:</label>              
+    </div>
+    <div class="form-floating">   
+      <input type="password" id="password" class="form-control bottom" name="password">
+      <label for="password">Password:</label>
+    </div>   
+    
+    <button type="submit" class="w-100 btn btn-lg btn-danger">Login</button>
+  </form>
+  <div class="container signin">
+    <p><b>Sign to to new  account? <a href="/register" style="color:black">Sign up</a></b>.</p>
+  </div>
+</main>
+
+<!--  -->
+
+
+        
+<%- include('partials/footer') %>
+
+
+
+

@@ -1,0 +1,40 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar2') %>
+<%- include('partials/sidebar') %>
+<div class="" >
+ 
+
+<% if (dets.length !=0) { %>
+   <div style="margin-left: 150px;margin-left: 600px;margin-top: 10px;">
+      <h1>Delete  the Clinic</h1>
+  </div>
+      <table id="customers" style="margin-left: 441px;margin-top: 80px;">
+         <tr>
+            <th>Name of Department</th><th>Department Head</th><th>Department Area</th><th>No of Employment</th><th>Department Phoneno</th>
+            <th>Delete</th>
+         </tr>
+         <form  action="/cildelete" method="post">
+         <% for (var i = 0; i < dets.length;  i++) { %>
+            <tr>
+               <td><%= dets[i].deparmentName%></td>
+               <td><%= dets[i].deparmentHead%></td>   
+               <td><%= dets[i].departmentArea%></td>
+               <td><%= dets[i].deparmentEmployment%></td>
+               <td><%= dets[i].deparmentPhoneNo%></td>
+               <td><input type="checkbox" name="checkbox" value="<%=dets[i]._id%>" onchange="this.form.submit()"></td>
+      
+            </tr>    
+            <% } %>
+      </table>
+      <% }  else { %>
+         <div style="margin-left: 150.;margin-left: 600px;margin-top: 10px;">
+           <h1>No Record Found</h1>
+       
+       </div>  
+          <% } %> 
+
+
+
+
+</div>
+<%- include('partials/footer') %>

@@ -1,0 +1,47 @@
+<%- include('partials/header') %>
+<%- include('partials/navbar2') %>
+<%- include('partials/sidebar') %>
+
+
+</div>    
+   <% if(pats.length !=0){ %> 
+         <div style="margin-left: 441px;margin-top: 80px;">
+            <h1>Delete  the Patient</h1>
+        </div>
+
+        <table id="customers" style="margin-left: 317px;margin-top: 80px;">
+        <tr>
+        <th>Patient Name</th><th>Patient Age</th><th>Patient Sex</th><th>Patient BloodGroup</th><th>Patient Area</th><th>Patient Disease</th><th>Patient Number</th><th>Delete Button </th>
+        </tr>
+    
+        <% for (var i = 0; i < pats.length;  i++) { %>
+            <form  action="/patdelete" method="post">
+        <tr>
+            
+        <td><%= pats[i].patientName%></td>
+        <td><%= pats[i].patientAge%></td>
+        <td><%= pats[i].patientSex%></td>
+        <td><%= pats[i].patientBldgp%></td>
+        <td><%= pats[i].patientArea%></td>
+        <td><%= pats[i].patientDisease%></td>
+        <td><a href="tel:+91<%= pats[i].patientNumber%>"><%= pats[i].patientNumber%></a></td>
+        <td><input type="checkbox" name="checkbox" value="<%=pats[i]._id%>" onchange="this.form.submit()"></td>
+        
+        </tr> 
+        </form>   
+        <% } %>
+         </table>   
+         <% } else { %> 
+            <div style="margin-left: 150.;margin-left: 600px;margin-top: 20px;">
+                <h1>No Record Found</h1>
+            
+            </div>  
+               <% } %>
+         
+
+
+
+
+
+</div>
+<%- include('partials/footer') %>

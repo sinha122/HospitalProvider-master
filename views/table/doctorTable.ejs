@@ -1,0 +1,29 @@
+
+<table id="customers" style="margin-left: 441px;margin-top: 80px;">
+    <tr>
+      <th>Doctor Full name</th><th>Speclization</th><th>Year of Experience</th><th>Doctor Number</th><th>Doctor Area </th>
+    </tr>
+ 
+    <!--  -->
+      <!-- dots.forEach(function(dots)){ -->
+      <% for (var i = 0; i < dots.length;   i++) { %>  
+         <form  action="/delete" method="post">
+         <tr>
+        
+      <!-- <td><input type="checkbox" name="checkbox" value="<dots[i]._id%>" onChange="this.form.submit()"></td> -->
+       <td><%= dots[i].doctorName%></td>
+       <td><%= dots[i].doctorSpecilization%></td>   
+       <td><%= dots[i].YearofExperience%></td>
+       
+      <td><a href="tel:+91<%= dots[i].doctorPhoneno%>"><%= dots[i].doctorPhoneno%></a></td>
+      <td><%= dots[i].doctorArea%></td>
+       
+     </tr>
+      <% } %>
+     
+ </table>
+ <div style="margin-left: 176px;margin-top: 55px;">
+   <!-- <button class="delete-button btn-bk" onclick= dots._id %>)">Deleteing</button> -->
+</div>
+
+    
